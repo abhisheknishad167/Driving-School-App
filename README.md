@@ -26,7 +26,7 @@ Driving School Application Created Using ASP.NET CORE 6.12
 ![Student-Console](https://github.com/abhisheknishad167/K-driving-School/blob/master/DrivingSchool/DrivingSchool/ScreenShots/19.png?raw=true)
 #Instructor_Login
 ![Instructor-Login](https://github.com/abhisheknishad167/K-driving-School/blob/master/DrivingSchool/DrivingSchool/ScreenShots/20.png?raw=true)
-![Instructor-Login](https://github.com/abhisheknishad167/K-driving-School/blob/master/DrivingSchool/DrivingSchool/ScreenShots/20.png?raw=true)
+
 #Instructor-Console
 ![Instructor-Console](https://github.com/abhisheknishad167/K-driving-School/blob/master/DrivingSchool/DrivingSchool/ScreenShots/21.png?raw=true)
 ![Instructor-Console](https://github.com/abhisheknishad167/K-driving-School/blob/master/DrivingSchool/DrivingSchool/ScreenShots/22.png?raw=true)
