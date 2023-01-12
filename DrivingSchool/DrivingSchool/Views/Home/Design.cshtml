@@ -1,0 +1,69 @@
+﻿
+
+<html>
+	<style>
+   
+
+*{
+  margin: 0;
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.marquee {
+  width: 100vw;
+  padding: 0 500%; /* full-width */
+  margin: 0 -500%; /* full-width */
+	overflow: hidden;
+	white-space: nowrap;
+  position: absolute;
+  top: -50px;
+}
+
+.marquee-text {
+	display: inline-block;
+	animation: marquee 10s linear infinite;
+}
+
+
+.marquee-text span {
+	display: inline-block;
+  font-size: 10rem;
+  color: #e1e1e1;
+  letter-spacing: .01em;
+  padding: .2em;
+}
+
+.content{
+  position: relative;
+  padding: 80px 0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+	
+	</style>
+
+	<body>
+		
+    <div class="marquee">
+      <div class="marquee-text">
+        <span>Advantage</span>
+        </div>
+     
+    </div>
+  <div class="content">
+  <h1>TITLE</h1>
+    <p>Lorem ipsum dolor sit amet, </p>
+    <p>consectetur adipiscing elit. </p>
+    <p>Nulla mi nisi, pretium sit amet molestie vitae,</p>
+    <p>tincidunt dignissim ex. </p>
+    <p>Quisque quis turpis non eros semper molestie. </p>
+  </div>
+</body>
+
+
+	
+	
+</html>

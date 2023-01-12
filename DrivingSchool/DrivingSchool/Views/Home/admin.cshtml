@@ -1,0 +1,147 @@
+﻿@{
+	ViewData["Title"] = "Home Page";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<!--Made with love by Mutiullah Samim -->
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DrivingSchool</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        
+                        
+                    <li class="nav-item" style="background-color:greenyellow">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="admin">Admin-Login</a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="StudentLogin">Student-Login</a>
+                    </li>
+					<li class="nav-item" >
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="InstructorLogin">Instructor-Login</a>
+                    </li>
+                 
+                   
+                    </ul>
+                </div>
+            </div>
+        </nav>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+   <style>
+              body{
+  background:#80CDF7;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+}
+svg{
+    font-size: 6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+svg path {
+    fill: transparent;
+}
+            </style>
+
+<body>
+	<div class="container">
+		<div class="d-flex justify-content-center h-100">
+			<div class="card">
+				<div class="card-header">
+					<h3>Admin Sign In</h3>
+					<div class="d-flex justify-content-end social_icon">
+						<span><i class="fab fa-facebook-square"></i></span>
+						<span><i class="fab fa-google-plus-square"></i></span>
+						<span><i class="fab fa-twitter-square"></i></span>
+					</div>
+				</div>
+				<div class="card-body">
+					
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text" id="name" class="form-control" placeholder="username">
+
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" id="pas" class="form-control" placeholder="password">
+						</div>
+						
+						<div class="form-group">
+						<a asp-controller="Employee" id="login" asp-action="Index" style="pointer-events: none;" ><button type="button" class="btn btn-outline-secondary">Login</button</a>
+						
+						</div>
+				
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	 <svg id="svg" viewBox="0 20 1040 700" xmlns="http://www.w3.org/2000/svg">
+        <path id="curve" d="M 0,700 C 0,700 0,350 0,350 C 152.13333333333333,306 304.26666666666665,262 445,298 C 585.7333333333333,334 715.0666666666668,450 879,472 C 1042.9333333333332,494 1241.4666666666667,422 1440,350 C 1440,350 1440,700 1440,700 Z">
+        </path>
+        <text x="-2000">
+            <textPath xlink:href="#curve">
+                DRIVE SAFE • K-DRIVING-SCHOOL •  DRIVE SAFE • DRIVE SAFE • K-DRIVING-SCHOOL •  DRIVE SAFE •DRIVE SAFE • K-DRIVING-SCHOOL •  DRIVE SAFE •DRIVE SAFE • K-DRIVING-SCHOOL •  DRIVE SAFE • CURVE MARQUEE • CURVE MARQUEE • DRIVE SAFE • K-DRIVING-SCHOOL •  DRIVE SAFE • DRIVE SAFE • K-DRIVING-SCHOOL •  DRIVE SAFE • DRIVE SAFE • K-DRIVING-SCHOOL •  DRIVE SAFE •
+            </textPath>
+            <animate attributeName="x" dur="30s" values="-4000;0" repeatCount="indefinite"></animate>
+        </text>
+    </svg>
+</body>
+<script>
+	$(document).ready(function () {
+		$("#name").keyup(function () {
+
+			var name= $(this).val();
+			
+
+			if($(this).val() =="Admin"){
+					$(document).ready(function() {
+  $("#pas").keyup(function() {
+    if($(this).val()=="123qwe"){
+		$("#login").css("pointer-events","")
+
+
+	}
+	
+  });
+})
+			}
+			else{
+				$("#login").css("pointer-events","none")
+
+			}
+		});
+	})
+
+
+
+</script>
+</html>

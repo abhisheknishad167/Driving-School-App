@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+        td,
+        th {
+            background: #ddd;
+            padding: 5px 10px;
+        }
+
+        input[type="text"] {
+            width: 60px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="src/jquery-3.2.1.min.js"></script>
+
+</head>
+<header>
+
+
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Employee" asp-action="Student">Student</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Student">Instructors</a>
+                    </li>
+
+                    <li class="nav-item" style="background-color:greenyellow">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="CARS">Cars</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="rating">Rating</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 55%;">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</header>
+<style>
+    body {
+        background-color: #f8f3ed;
+    }
+
+    table {
+        background-color: ghostwhite;
+    }
+</style>
+
+
+<body>
+    <table id="countriesTable" class="table table-bordered table-hover">
+        <tr>
+            <th>Cars</th>
+            <th>Type</th>
+            <th>Action</th>
+        </tr>
+
+    </table>
+    <script>
+        $(() => initializeTable());
+    </script>
+
+    <script>
+        function initializeTable() {
+            $("#createLink").click(createCountry);
+            addCountryToTable("Skoda Octavia", "Full Sedan");
+            addCountryToTable("lamborghini huracan", "Premium car");
+            addCountryToTable("Bugatti veyron", "Premium car");
+            addCountryToTable("Skoda Slavia", "Full Sedan");
+            addCountryToTable("skoda Superb", "Full Sedan");
+            addCountryToTable("skoda Kushaq", "SUV");
+            addCountryToTable("Honda City", "Sedan");
+            addCountryToTable("Skoda Kodiaq", "SUV");
+
+            foxRowLinks();
+
+            function createCountry() {
+                let country = $("#newCountryText").val();
+                let capital = $("#newCapitalText").val();
+                addCountryToTable(country, capital, true);
+                $("#newCountryText").val("");
+                $("#newCapitalText").val("");
+                fixRowLinks();
+            }
+
+            function addCountryToTable(country, capital) {
+                let row = $("<tr>")
+                    .append($("<td>").text(country))
+                    .append($("<td>").text(capital))
+                    .append(
+                        $("<td>")
+                            .append($("<a href='#'>[Up]</a>").click(moveRowUp))
+                            .append(" ")
+                            .append($("<a href='#'>[Down]</a>").click(moveRowDown))
+                            .append(" ")
+
+                    );
+                row.css("display", "none");
+                $("#countriesTable").append(row);
+                row.fadeIn();
+            }
+
+            function moveRowUp() {
+                let row = $(this).parent().parent();
+                row.fadeOut(function () {
+                    row.insertBefore(row.prev());
+                    row.fadeIn();
+                    fixRowLinks();
+                });
+            }
+
+            function moveRowDown() {
+                let row = $(this).parent().parent();
+                row.fadeOut(function () {
+                    row.insertAfter(row.next());
+                    row.fadeIn();
+                    fixRowLinks();
+                });
+            }
+
+            function deleteRow() {
+                let row = $(this).parent().parent();
+                row.fadeOut(function () {
+                    row.remove();
+                    fixRowLinks();
+                });
+            }
+
+            function deleteRow() {
+                let row = $(this).parent().parent();
+                row.fadeOut(function () {
+                    row.remove();
+                    fixRowLinks();
+                });
+            }
+
+            function fixRowLinks() {
+                // Show all links in the table
+                $("#countriesTable a").css("display", "inline");
+
+                // Hide [Up] link in first table data row
+                let tableRows = $("#countriesTable tr");
+                $(tableRows[2]).find("a:contains('Up')").css("display", "none");
+
+                // Hide the [Down] link in the last table row
+                $(tableRows[tableRows.length - 1])
+                    .find("a:contains('Down')")
+                    .css("display", "none");
+            }
+        }
+    </script>
+</body>
+</html>
